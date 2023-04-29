@@ -35,6 +35,7 @@ window.onload = () => {
     let switchMonth = true
     let switchDay = true 
     let switchWhole = true
+    let switchEmpty = true
     
     let yearInput
     inputYears.addEventListener("input", (e) => {
@@ -221,6 +222,8 @@ window.onload = () => {
                 errorTexts.forEach((errorText) => {
                     errorText.textContent = "This field is required"
                 })
+
+                switchEmpty = false
             }
             else {
 
@@ -235,6 +238,9 @@ window.onload = () => {
                 errorTexts.forEach((errorText) => {
                     errorText.textContent = ""
                 })
+
+                switchEmpty = true
+
 
             }
 
@@ -283,7 +289,7 @@ window.onload = () => {
             console.log(switchWhole)
             
         
-            if (switchWhole){
+            if (switchWhole && switchEmpty){
                 //Day
                 if (birthDay === currentDay) {
                     /* 
