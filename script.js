@@ -290,19 +290,19 @@ window.onload = () => {
 
             if (birthYear >= 1 && birthYear <= currentYear){
                 labels.forEach((label) => {
-                    if(label.classList.contains("Year-label")){
+                    if(label.classList.contains("year-label")){
                         label.classList.remove("empty-error")
                     }
                 })
 
                 inputs.forEach((input) => {
-                    if(input.classList.contains("Year-input")){
+                    if(input.classList.contains("year-input")){
                         input.classList.remove("empty-error")
                     }
                 })
 
                 errorTexts.forEach((errorText) => {
-                    if (errorText.classList.contains("Year")){
+                    if (errorText.classList.contains("year")){
                         errorText.textContent = ""
                     }
                 })
