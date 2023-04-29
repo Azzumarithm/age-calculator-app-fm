@@ -1,0 +1,297 @@
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('assets/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-ExtraBoldItalic';
+    src: url('assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Pooppins-Italic';
+    src: url('assets/fonts/Poppins-Italic.ttf') format('truetype');
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: hsl(0, 0%, 94%);
+}
+
+.age-calculator-app{
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 20px;
+    border-bottom-right-radius: 110px;
+    padding: 45px 20px 20px 20px;
+    
+}
+
+
+.date-input-form{
+    display: grid;
+    grid-template-columns: repeat(3,5.7rem);
+    gap: 2.2rem 1rem;
+    z-index: 1;
+    margin-bottom: 25px;
+    
+}
+
+
+.form-group {
+    display: block;
+    margin-bottom: 1rem;
+    height: 50px;
+}
+
+.form-group label{
+    display: block;
+    font-family: 'Poppins-Bold';
+    color: hsl(0, 1%, 44%);
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+    letter-spacing: 0.15rem;
+}
+
+.form-group label.empty-error{
+    
+    color: hsl(0, 100%, 67%);
+    
+}
+
+.form-group label.month-error{
+    color: hsl(0, 100%, 67%);
+}
+
+.form-group label.year-error{
+    color: hsl(0, 100%, 67%);
+   
+}
+
+.form-group label.day-error{
+    color: hsl(0, 100%, 67%); 
+}
+
+
+.form-group input {
+    display: block;
+    font-family: 'Poppins-Bold';
+    padding: 0px 0px 0px 15px;
+    border: 1px solid hsl(0, 0%, 86%);
+    font-size: 1.1rem;
+    border-radius: 5px;
+    height: 3rem;
+    width: 5.7rem;
+    outline: none;
+}
+
+.form-group input:focus {
+    
+    border: 1px solid hsl(259, 100%, 65%);
+    
+}
+
+.form-group input.empty-error {
+    
+    border: 1px solid hsl(0, 100%, 67%);
+    
+}
+
+.form-group input.month-error {
+    
+    border: 1px solid hsl(0, 100%, 67%);
+   
+}
+
+.form-group input.year-error {
+    
+    border: 1px solid hsl(0, 100%, 67%);
+    
+}
+
+.form-group input.day-error {
+    border: 1px solid hsl(0, 100%, 67%);
+}
+
+
+
+
+
+.form-group input::placeholder{
+    color: hsl(0, 1%, 44%);
+}
+
+
+
+.submit{
+    /* grid-column: 5; */
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    justify-self: center;
+    border-radius: 100%;
+    z-index: 2;
+    grid-column: 2;
+    grid-row: 2;
+    background-color: hsl(259, 100%, 65%);
+    height: 60px;
+    width: 60px;
+
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 8%);
+    transition: 0.1s linear;
+}
+
+.arrow{
+    height: 30px;
+    width: 30px;
+}
+
+.grid-item:nth-child(4){
+    height: 0px;
+    z-index: 0;
+    
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    border: 0.5px solid hsla(0, 0%, 86%, 0.762);
+    align-self: center;
+    
+    
+}
+
+/* .grid-item:nth-child(2){
+    
+    justify-self: center;
+}
+
+.grid-item:nth-child(3){
+    
+    justify-self: end;
+} */
+
+
+.years ,.months, .days ,.date {
+    font-family: 'Poppins-ExtraBoldItalic'; 
+    display: inline;  
+    font-size: 3.3rem;
+}
+
+
+.dash{
+    color: hsl(259, 100%, 65%);
+}
+
+
+
+
+.error-text{
+    font-size: 0.5rem;
+    margin-top: 5px;
+    font-family: 'Pooppins-Italic';
+    color: hsl(0, 100%, 67%);
+}
+
+@media (min-width: 35rem){
+
+    .age-calculator-app{
+        background-color:hsl(0, 0%, 100%);
+        border-radius: 10px;
+        border-bottom-right-radius: 150px;
+        padding: 35px 20px 20px 35px;
+        
+    }
+    
+    .date-input-form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 0.2fr 0.7fr;
+        gap: 0.7rem 1rem;
+        margin-bottom: 5px;
+    
+    }
+
+    .form-group input {
+        display: block;
+        font-family: 'Poppins-Bold';
+        padding: 0px 0px 0px 15px;
+        border: 1px solid hsl(0, 0%, 86%);
+        font-size: 1.1rem;
+        border-radius: 5px;
+        height: 2.8rem;
+        width: 6.7rem;
+        outline: none;
+    }
+
+    .submit{
+        grid-column: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-style: none;
+        border-radius: 100%;
+        background-color: hsl(259, 100%, 65%);
+        height: 60px;
+        width: 60px;
+        
+    }
+    
+    .submit:hover{
+        cursor: pointer;
+        background-color: hsl(0, 0%, 8%);
+        transition: 0.1s linear;
+    }
+    
+    .arrow{
+        height: 30px;
+        width: 30px;
+    }
+
+    .grid-item:nth-child(4){
+        height: 0px;
+        margin-right: -30px;
+        grid-column: 1/5;
+        border: 0.5px solid hsla(0, 0%, 86%, 0.762);
+        align-self: center;
+        
+    }
+
+    .years ,.months, .days ,.date {
+        font-family: 'Poppins-ExtraBoldItalic'; 
+        display: inline;  
+        font-size: 4.5rem;
+    }
+
+    .error-text{
+        font-size: 0.62rem;
+        margin-top: 5px;
+        font-family: 'Pooppins-Italic';
+        color: hsl(0, 100%, 67%);
+    }
+    
+    
+}
+
+
