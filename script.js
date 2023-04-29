@@ -97,10 +97,35 @@ window.onload = () => {
             switchYear = true
 
        }
+       //Remove Unnecessary styling before submitting the form
+
+       if (isNaN(yearInput) || (yearInput <= currentYear && yearInput >= 1)) {
+        labels.forEach((label) => {
+            if (label.classList.contains("year-label")) {
+                label.classList.remove("empty-error")
+            }
+        })
+
+        inputs.forEach((input) => {
+            if (input.classList.contains("year-input")) {
+                input.classList.remove("empty-error")
+            }
+        })
+
+        errorTexts.forEach((errorText) => {
+            if (errorText.classList.contains("year")) {
+                errorText.textContent = ""
+            }
+        })
+
+    }
+
+       
 
        
     })
 
+    
     
 
     let monthInput
@@ -147,12 +172,35 @@ window.onload = () => {
            switchMonth = true
 
        }
+
+       //Remove Unnecessary styling before submitting the form
+
+        if (isNaN(monthInput) || (monthInput <= 12 && monthInput >= 1)) {
+            labels.forEach((label) => {
+                if (label.classList.contains("month-label")) {
+                    label.classList.remove("empty-error")
+                }
+            })
+
+            inputs.forEach((input) => {
+                if (input.classList.contains("month-input")) {
+                    input.classList.remove("empty-error")
+                }
+            })
+
+            errorTexts.forEach((errorText) => {
+                if (errorText.classList.contains("month")) {
+                    errorText.textContent = ""
+                }
+            })
+
+        }
     })
 
     let dayInput
     inputDays.addEventListener("input", (e) => {
        dayInput = parseInt(e.currentTarget.value)
-        console.log(dayInput)
+        
 
         if (dayInput > 31 || dayInput < 1) {
 
@@ -193,6 +241,30 @@ window.onload = () => {
             switchDay = true
 
         }
+
+        //Remove Unnecessary styling before submitting the form
+
+        if (isNaN(dayInput) || (dayInput <= 31 && dayInput >= 1)){
+            labels.forEach((label) => {
+                if(label.classList.contains("day-label")){
+                    label.classList.remove("empty-error")
+                }
+            })
+    
+            inputs.forEach((input) => {
+                if(input.classList.contains("day-input")){
+                    input.classList.remove("empty-error")
+                }
+            })
+    
+            errorTexts.forEach((errorText) => {
+                if (errorText.classList.contains("day") ){
+                    errorText.textContent = ""
+                }
+            })
+    
+        }
+        
 
     })
     
@@ -245,8 +317,8 @@ window.onload = () => {
 
             }
 
-            //Remove unnecessary styling for empty-errors
-            if (birthDay >= 1 && birthDay <= 31){
+            //Remove unnecessary styling for empty-errors after submitting 
+            if ((birthDay >= 1 && birthDay <= 31 )){
                 labels.forEach((label) => {
                     if(label.classList.contains("day-label")){
                         label.classList.remove("empty-error")
@@ -492,8 +564,11 @@ window.onload = () => {
     
     
     })
+
+    console.log(dayInput)
+
     
-    
+
     
     const errorEmpty = (birthDay,birthMonth,birthYear) => {
 
@@ -519,18 +594,6 @@ window.onload = () => {
         switchWhole = false
     
         dayText.textContent = "Must be a valid date"
-    }
-    
-    let counterDay = (diffDays) => {
-        let countDay = 0
-    }
-
-    let counterMonth = (diffMonth) => {
-        let countMonth = 0
-    }
-
-    let counterYear = (diffYear) => {
-        let countYear = 0
     }
 
 
