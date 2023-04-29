@@ -223,6 +223,7 @@ window.onload = () => {
                     errorText.textContent = "This field is required"
                 })
 
+
                 switchEmpty = false
             }
             else {
@@ -243,6 +244,71 @@ window.onload = () => {
 
 
             }
+
+            //Remove unnecessary styling for empty-errors
+            if (birthDay >= 1 && birthDay <= 31){
+                labels.forEach((label) => {
+                    if(label.classList.contains("day-label")){
+                        label.classList.remove("empty-error")
+                    }
+                })
+
+                inputs.forEach((input) => {
+                    if(input.classList.contains("day-input")){
+                        input.classList.remove("empty-error")
+                    }
+                })
+
+                errorTexts.forEach((errorText) => {
+                    if (errorText.classList.contains("day") ){
+                        errorText.textContent = ""
+                    }
+                })
+
+            }
+            
+            if (birthMonth >= 1 && birthMonth <= 12){
+                labels.forEach((label) => {
+                    if(label.classList.contains("month-label")){
+                        label.classList.remove("empty-error")
+                    }
+                })
+
+                inputs.forEach((input) => {
+                    if(input.classList.contains("month-input")){
+                        input.classList.remove("empty-error")
+                    }
+                })
+
+                errorTexts.forEach((errorText) => {
+                    if (errorText.classList.contains("month")){
+                        errorText.textContent = ""
+                    }
+                })
+
+            }
+
+            if (birthYear >= 1 && birthYear <= currentYear){
+                labels.forEach((label) => {
+                    if(label.classList.contains("Year-label")){
+                        label.classList.remove("empty-error")
+                    }
+                })
+
+                inputs.forEach((input) => {
+                    if(input.classList.contains("Year-input")){
+                        input.classList.remove("empty-error")
+                    }
+                })
+
+                errorTexts.forEach((errorText) => {
+                    if (errorText.classList.contains("Year")){
+                        errorText.textContent = ""
+                    }
+                })
+
+            }
+
 
             //whole Error
             if (birthYear % 4 !== 0){
