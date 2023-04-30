@@ -383,7 +383,9 @@ window.onload = () => {
 
 
             //whole Error
+            
             if (birthYear % 4 !== 0){
+                //not a leap year
                 if (birthMonth % 2 === 0 && birthMonth !== 2){
                     if (birthDay > 30){
                         errorWhole()
@@ -402,8 +404,13 @@ window.onload = () => {
                     }
                     
                 }
+
+                console.log(1)
+
             }
-            else if (birthYear % 4 === 0){
+            else if ((birthYear % 4 === 0 && birthYear % 100 !== 0) || birthYear % 400 === 0){
+                //leap year
+                
                 if (birthMonth % 2 === 0 && birthMonth !== 2){
                     if (birthDay > 30){
                         errorWhole()
@@ -422,6 +429,12 @@ window.onload = () => {
                     }
                     
                 }
+                console.log(2)
+                    
+                
+            }
+            else {
+                errorWhole()
             }
             
             console.log(switchWhole)
